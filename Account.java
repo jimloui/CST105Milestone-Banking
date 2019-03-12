@@ -1,6 +1,6 @@
 package edu.gcu.cst105.week4.tuesday;
 
-public class Account {
+public abstract class Account implements iTrans {
 	double balance;
 	private int account;
 	
@@ -25,8 +25,9 @@ public class Account {
 		this.account = account;
 		
 	}
-	public void doWithdrawal(double amount) {
-		
+	public double doWithdrawal(double amount) {
+		this.balance = balance - amount;	
+		return this.balance;
 		
 		
 	}
@@ -36,5 +37,4 @@ public class Account {
 		return this.balance;
 	}
 	
-
 }
